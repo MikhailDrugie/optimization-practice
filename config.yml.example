@@ -40,3 +40,5 @@ product-4:
 product-5:
   min:
   cost:
+# other parameters
+minimal-profit:
