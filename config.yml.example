@@ -1,0 +1,42 @@
+---
+# working stations
+station-1:
+  time-fund:
+  # time costs for each product[i]
+  time-cost-1:
+  time-cost-2:
+  time-cost-3:
+  time-cost-4:
+  time-cost-5:
+station-2:
+  time-fund:
+  # time costs for each product[i]
+  time-cost-1:
+  time-cost-2:
+  time-cost-3:
+  time-cost-4:
+  time-cost-5:
+station-3:
+  time-fund:
+  # time costs for each product[i]
+  time-cost-1:
+  time-cost-2:
+  time-cost-3:
+  time-cost-4:
+  time-cost-5:
+# products
+product-1:
+  min:
+  cost:
+product-2:
+  min:
+  cost:
+product-3:
+  min:
+  cost:
+product-4:
+  min:
+  cost:
+product-5:
+  min:
+  cost:
