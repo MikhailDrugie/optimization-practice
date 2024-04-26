@@ -35,6 +35,35 @@ class AbstractVariantDto(ABC):
             if data.get(f'station-{i + 1}')
         ]
 
+    @property
+    def product_dict(self) -> dict[int, ProductDto]:
+        return {product.id: product for product in self.products}
+
+    @property
+    def station_dict(self) -> dict[int, StationDto]:
+        return {station.id: station for station in self.stations}
+
+    @property
+    def costs(self) -> list[float]:
+        return [product.cost for product in self.products]
+
+    @property
+    def minimums(self) -> list[int]:
+        return [product.min for product in self.products]
+
+    @property
+    def time_funds(self) -> list[float]:
+        return [station.time_fund for station in self.stations]
+
+    def _time_costs(self, station_id: int) -> list[float]:
+        return ((([0] * self.product_amount) * (station_id - 1)) +
+                self.station_dict[station_id].time_costs.values +
+                (([0] * self.product_amount) * (self.station_amount - station_id)))
+
+    @property
+    def time_costs(self):
+        return [self._time_costs(station.id) for station in self.stations]
+
     def __str__(self):
         products_prompts = [
             f'  #{product.id}:\n'
